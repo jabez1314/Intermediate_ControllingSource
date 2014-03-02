@@ -24,7 +24,6 @@
     
     return YES;
 }
-							
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
