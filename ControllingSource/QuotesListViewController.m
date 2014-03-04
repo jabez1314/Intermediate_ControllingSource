@@ -64,7 +64,7 @@
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
 {
-    [self.tableView endUpdates];
+    [self.tableView endUpdates]; 
 }
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
@@ -84,10 +84,11 @@
 {
     NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
     NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
-    Quote *newQuote = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
+//    Quote *newQuote = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
     
-    newQuote.famousQuote = @"This should be a famous quote";
+//    newQuote.famousQuote = @"This should be a famous quote";
     
+    [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
     NSError *error = nil;
     
     if (![context save:&error])
